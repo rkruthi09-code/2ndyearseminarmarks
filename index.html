@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 25px;
+            width: 300px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            color: blue;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px 0;
+            margin-top: 5px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            text-indent: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+
+        #message {
+            color: red;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+
+        <form onsubmit="return checkLogin()">
+            <label for="username">Username</label>
+            <input type="text" id="username"
+                   placeholder="Enter username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+                   placeholder="Enter password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkLogin() {
+            var username =
+                document.getElementById("username").value;
+
+            var password =
+                document.getElementById("password").value;
+
+            if (username === "Kruthi" &&
+                password === "Kruthi123") {
+
+                window.location.href = "marksheet.html";
+                return false;
+
+            } else {
+                document.getElementById("message").innerHTML =
+                    "Invalid username or password!";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
